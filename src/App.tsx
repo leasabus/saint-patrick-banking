@@ -1,9 +1,10 @@
-import LoginPage from "./pages/login/LoginPage"
+
+import AppRoutes from "./routes/AppRoutes"
 
 const App = () => {
   return (
     <div>
-      <LoginPage/>
+     <AppRoutes/>
     </div>
   )
 }
