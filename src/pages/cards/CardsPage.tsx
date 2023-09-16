@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import SideBar from '../../components/SideBar' ;
 
 const CardsPage = () => {
@@ -62,7 +63,7 @@ const CardsPage = () => {
     <span>$22.000</span>
     </div>
     </div>
-    <button className='mt-8 bg-terciary rounded p-1'>Mis movimientos</button>
+    <Link to={"/history"} className='mt-8 bg-terciary rounded p-1'>Mis movimientos</Link>
     </div>
     </div>
     </>

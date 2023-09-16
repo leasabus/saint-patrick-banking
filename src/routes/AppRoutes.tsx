@@ -4,6 +4,7 @@ import CardsPage from "../pages/cards/CardsPage"
 import NewTransaction from "../pages/transactions/NewTransaction"
 import Pay from "../pages/transactions/Pay"
 import ConfirmTransaction from "../pages/transactions/ConfirmTransaction"
+import { HistoryTransactions } from "../pages/history/HistoryTransactions"
 
 
 
@@ -15,6 +16,7 @@ const AppRoutes = () => {
       <Route path="/transaction" element={<NewTransaction/>}></Route>
       <Route path="/pay" element={<Pay/>}></Route>
       <Route path="/confirm" element={<ConfirmTransaction/>}></Route>
+      <Route path="/history" element={<HistoryTransactions/>}></Route>
     </Routes>
   
   )
