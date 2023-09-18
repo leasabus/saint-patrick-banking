@@ -1,14 +1,25 @@
-
+// import "./public/logo.png" ;
 const LoginSlogan = () => {
   return (
-       <div className="flex flex-col items-start justify-start ml-8 text-start gap-2 mt-4">
-       <h1 className="text-4xl font-bold">Saint Patrick</h1>
-       <h2 className="text-secondary font-semibold text-2xl">Online Banking</h2>
-       <h3 className="text-lg">La mejor banca online en tus manos.</h3>
-      <img className="mt-4" src="./public/logo.png" alt="logo" width={255} height={280} />
+       <div id="bg-login" className="h-full  text-white flex flex-col items-start p-6">
+       <div className="flex flex-row items-start justify-center gap-2">
+       <img src="./public/logo1.png" alt="logo"  />
+
+       <div className="flex flex-col ">
+       <h1 className="text-xl font-bold">Saint Patrick</h1>
+       <p className="text-sm text-gray-400">Online banking.</p>
+       </div>
+       </div>
+
+       <div className="flex flex-col items-start justify-center mt-[200px]">
+       <h3 className="text-xl text-green-500">La mejor banca online en tus manos.</h3>
+       <p className="text-sm text-gray-400 mt-4">Una aplicación de home banking que permite a los usuarios enviar y recibir dinero de manera segura, además de proporcionar un seguimiento completo de sus transacciones financieras.</p>
+       </div>
+      
+      
       </div>
       
   )
 }
 
-export default LoginSlogan
+export default LoginSlogan ;

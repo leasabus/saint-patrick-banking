@@ -1,8 +1,5 @@
 import SideBar from "../../components/SideBar"
 import { usuario } from './transactions';
-import {BiUserCircle} from 'react-icons/bi';
-
-
 
 
 export const HistoryTransactions = () => {

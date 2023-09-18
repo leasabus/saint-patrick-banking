@@ -50,16 +50,17 @@ const LoginForm = () => {
   
   return (
     <>
-      <div className="w-full max-w-xs mx-auto mt-4">
-        <h1 className="text-xl font-bold text-secondary">Bienvenido a tu home banking</h1>
-        <h4 className="mt-3">Ingresa tus datos y comenza a operar</h4>
+      <div className='h-full flex flex-col justify-center items-start py-20  px-40'>
+
+        <h1 className="text-4xl font-bold text-green-500">Bienvenido Saint Patrick</h1>
+        <h4 className="mt-3 text-start">Ingresa tus datos y comenza a operar.</h4>
   
-  <form onSubmit={onFormSubmit} className="bg-white shadow-md rounded mt-5 ">
+  <form onSubmit={onFormSubmit} className="bg-white shadow-md rounded mt-5 flex flex-col h-full ">
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+      <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="username">
        Nombre
       </label>
-      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" 
+      <input className="shadow appearance-none border rounded w-[500px] py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" 
              type= "text"
              name= 'username'
              placeholder="Nombre"
@@ -77,7 +78,7 @@ const LoginForm = () => {
     </div>
 
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+      <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="username">
        Apellido
       </label>
       <input  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"  
@@ -101,7 +102,7 @@ const LoginForm = () => {
 
 
     <div className="mb-6">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+      <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="password">
         Contraseña
       </label>
       <input  className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-500 mb-3 leading-tight focus:outline-none focus:shadow-outline"   
@@ -120,15 +121,15 @@ const LoginForm = () => {
             <span className='text-blue-400 text-[10px] font-bold'><AiFillCheckCircle size={16}/> </span>
            
               }
+
+       
     </div>
 
-    <div className="flex items-center justify-between">
-      <button className="bg-terciary hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+    <button className="bg-green-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
               type="submit">
-        Login
-      </button>
+           Login
+    </button>
     
-    </div>
 
   </form>
   

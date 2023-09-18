@@ -8,7 +8,7 @@ const Pay = () => {
    
        <div className="flex flex-row ">
         <SideBar/>
-        <div className='flex flex-col px-20 py-10 items-start justify-start w-full'>
+        <div className='flex flex-col px-20 py-10 items-start justify-start'>
         <h1 className='text-2xl'>Enviar dinero</h1>
 
             <div className='flex flex-col items-center justify-center mt-10  m-auto w-[400px] h-[200px] '>
