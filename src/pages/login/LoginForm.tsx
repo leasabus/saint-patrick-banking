@@ -57,31 +57,31 @@ const LoginForm = () => {
   
   <form onSubmit={onFormSubmit} className="bg-white shadow-md rounded mt-5 flex flex-col h-full ">
     <div className="mb-4">
-      <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="username">
+      <label className="block text-gray-500 text-xl font-bold mb-2" htmlFor="username">
        Nombre
       </label>
-      <input className="shadow appearance-none border rounded w-[500px] py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" 
+      <input className="shadow appearance-none border rounded w-[400px] py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" 
              type= "text"
              name= 'username'
              placeholder="Nombre"
              value={formData.username}
              onChange={onInputChange}
              />
-              {
+              {/* {
             (!formData.username) || (formData.username.length <= 5)
               ? 
              <span className='text-red-500 text-[10px]'>Rellena este campo. Recuerda que debe tener más de 5 caracteres</span>
               : 
             <span className='text-blue-400 text-[10px] font-bold'><AiFillCheckCircle size={16}/> </span>
            
-              }
+              } */}
     </div>
 
-    <div className="mb-4">
-      <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="username">
+    <div className="mt-4">
+      <label className="block text-gray-500 text-xl font-bold mb-2" htmlFor="username">
        Apellido
       </label>
-      <input  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"  
+      <input  className="shadow appearance-none border rounded w-full py-2 px-4 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"  
               type="text"
               name='lastname'
               placeholder="Apellido"
@@ -89,20 +89,20 @@ const LoginForm = () => {
               onChange={onInputChange}
 
               />
-              {
+              {/* {
        (!formData.lastname) || (formData.lastname.length <= 5)
               ? 
              <span className='text-red-500 text-[10px]'>Rellena este campo. Recuerda que debe tener más de 5 caracteres</span>
               : 
             <span className='text-blue-400 text-[10px] font-bold'><AiFillCheckCircle size={16}/> </span>
            
-              }
+              } */}
          
     </div>
 
 
-    <div className="mb-6">
-      <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="password">
+    <div className="mt-4">
+      <label className="block text-gray-500 text-xl font-bold mb-2" htmlFor="password">
         Contraseña
       </label>
       <input  className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-500 mb-3 leading-tight focus:outline-none focus:shadow-outline"   
@@ -113,19 +113,19 @@ const LoginForm = () => {
               onChange={onInputChange}
 
               />
-                {
+                {/* {
        (!formData.password) || (formData.password.length <= 5)
               ? 
              <span className='text-red-500 text-[10px]'>Rellena este campo. Recuerda que debe tener más de 5 caracteres</span>
               : 
             <span className='text-blue-400 text-[10px] font-bold'><AiFillCheckCircle size={16}/> </span>
            
-              }
+              } */}
 
        
     </div>
 
-    <button className="bg-green-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4" 
               type="submit">
            Login
     </button>
