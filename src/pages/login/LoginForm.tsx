@@ -55,7 +55,7 @@ const LoginForm = () => {
         <h1 className="text-4xl font-bold text-green-500">Bienvenido Saint Patrick</h1>
         <h4 className="mt-3 text-start">Ingresa tus datos y comenza a operar.</h4>
   
-  <form onSubmit={onFormSubmit} className="bg-white shadow-md rounded mt-5 flex flex-col h-full ">
+  <form onSubmit={onFormSubmit} className="bg-white  rounded mt-5 flex flex-col h-full ">
     <div className="mb-4">
       <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="username">
        Nombre
