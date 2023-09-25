@@ -9,8 +9,8 @@ const CardsPage = () => {
     <div className='flex flex-row'>
     <SideBar/>
     <div className='flex flex-col px-20 py-10 items-start justify-start'>
-      <h1 className='text-2xl'>Hola Leandro</h1>
-      <h2>¡Que bueno tenerte de vuelta!</h2>
+      <h1 className='text-4xl'>Hola Leandro.</h1>
+      <h2 className='text-xl mt-4 text-gray-500'>¡Que bueno tenerte de vuelta!</h2>
 
       {/* <div className='flex flex-col w-[500px] mt-8'>
         <div className='flex flex-row justify-between text-xl'>
