@@ -1,0 +1,17 @@
+{
+  "users" : [
+    {
+        "id" : 1,
+        "name" : "leandro",
+        "lastName" : "sabus",
+        "key" : "leandro123"
+    },
+
+    {
+        "id" : 2,
+        "name" : "agustin",
+        "lastName" : "gonzalez",
+        "key" : "agustin123"
+    }
+  ]
+}
