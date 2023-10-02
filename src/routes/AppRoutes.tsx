@@ -5,6 +5,7 @@ import NewTransaction from "../pages/transactions/NewTransaction"
 import Pay from "../pages/transactions/Pay"
 import ConfirmTransaction from "../pages/transactions/ConfirmTransaction"
 import { HistoryTransactions } from "../pages/history/HistoryTransactions"
+import { Bienvenida } from "../pages/login/Bienvenida"
 
 
 
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path="/pay" element={<Pay/>}></Route>
       <Route path="/confirm" element={<ConfirmTransaction/>}></Route>
       <Route path="/history" element={<HistoryTransactions/>}></Route>
+      <Route path="/welcome" element={<Bienvenida/>}></Route>
     </Routes>
   
   )

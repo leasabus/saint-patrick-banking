@@ -1,21 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
+import { UserTypes } from '../../interfaces/users';
+import { useUser } from '../../context/AuthContext';
+import { redirect} from 'react-router-dom';
 
-
-
-interface InitialState  {
-  name : string,
-  lastName: string,
-  key: string
-}
-
-
-const initialState:InitialState = {
-  name : '',
-  lastName: '',
-  key: '',
-}
 
 const LoginForm = () => {
 
@@ -23,19 +12,39 @@ const LoginForm = () => {
   const [data, setData] = useState<any>(null);
 
    //Utilizacion del hook de react-hook-form
-   const {register, handleSubmit , formState:{errors}} = useForm<InitialState>();
+   const {register, handleSubmit , formState:{errors}} = useForm<UserTypes>();
+   const {setUser} = useUser();
 
   const baseURL = 'http://localhost:3000/users/1' ;
 
-  useEffect(() => {
-  axios.get(baseURL)
-  .then(response => {
-    setData(response.data)
-    console.log(response.data)
-  })
-  .catch(err => console.log(err))
-  }, [])
-  
+  // const onSubmit = handleSubmit(values => { console.log(values)}) ;
+   
+  const onSubmit = async (data: {name:string, lastName:string, key:string}) => {
+        try {
+          const response = await axios.get(`http://localhost:3000/users?name=${data.name}`)
+          const users = response.data
+          // console.log("Este es el user")
+          // console.log(users)
+          if(users.length === 1){
+            const user = users[0];
+            //verificacion de los 3 campos
+            //(mostrar un mensaje por campo)
+            if(user.key === data.key && user.name === data.name && user.lastName === data.lastName){
+              console.log(user)
+              setUser(user) ;
+              redirect("/welcome")
+            } else {
+              alert("Datos incorrectos, intentalo de nuevo")
+            }
+          }else {
+            console.error("NO SE ENCONTRO UN USUARIO CON ESE ID")
+          }          
+        }catch(erorr){
+          console.log("Usuario no encontrado")
+        }
+
+  }
+
   return (
     <>
       <div className='h-full flex flex-col justify-center items-start py-20  px-40'>
@@ -43,7 +52,7 @@ const LoginForm = () => {
         <h1 className="text-4xl font-bold text-green-500">Bienvenido Saint Patrick</h1>
         <h4 className="mt-3 text-start">Ingresa tus datos y comenza a operar.</h4>
   
-  <form onSubmit={handleSubmit(values => { console.log(values)})} 
+  <form onSubmit={handleSubmit(onSubmit)}
         className="bg-white  rounded mt-5 flex flex-col h-full ">
     <div className="mb-4">
       <label className="block text-gray-500 text-xl font-bold mb-2" htmlFor="username">
@@ -101,30 +110,6 @@ const LoginForm = () => {
 
 export default LoginForm ;
 
-
-
-
-
-
-// const onFormSubmit = async (e : React.FormEvent) => {
-
-//   //   e.preventDefault();
-    
-//   //   //Fetching de datos
-//   //   // try {
-//   //   // const url = `http://localhost:8080/users/login/${formData.name}/${formData.lastName}/${formData.key}` ;
-//   //   // const response = await fetch(url);
-  
-//   //   // if(response.ok){
-//   //   //   const data = await response.json();
-//   //   //   console.log(data)
-//   //   // } else {
-//   //   //   console.error("Error") ;
-//   //   // }
-//   //   // }catch (error) {
-//   //   //  console.log(error);
-
-//   //   // }}
   
 
        {/* {
