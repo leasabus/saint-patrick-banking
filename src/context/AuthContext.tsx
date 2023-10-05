@@ -14,7 +14,7 @@ type UserContextType = {
   };
 
   //Creacion del contexto
-const UserContext  = createContext<UserContextType | undefined>(undefined)
+const UserContext  = createContext<UserContextType | undefined>(undefined);
 
 //funcion para utilizar los datos del usuario
 export function useUser() {
@@ -26,7 +26,7 @@ export function useUser() {
 }
 
 //creacion del provider
-export const AuthProvider = ({children }: UserProviderProps) => {
+export const AuthProvider = ({children}: UserProviderProps) => {
  const [user, setUser] = useState<UserTypes | null>(null);
 
  return (

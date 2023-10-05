@@ -5,9 +5,18 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext.tsx'
 
+const usuarioGuardado = JSON.parse(localStorage.getItem('user'));
+
+if(usuarioGuardado) {
+  const userSaved = JSON.parse(usuarioGuardado);
+} else {
+  console.log("error")
+}
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AuthProvider>
+    <AuthProvider initialUser={usuarioGuardado}>
     <BrowserRouter>
     <App />
     </BrowserRouter>

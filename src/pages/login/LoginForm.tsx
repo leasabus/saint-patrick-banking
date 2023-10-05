@@ -1,23 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 import { UserTypes } from '../../interfaces/users';
 import { useUser } from '../../context/AuthContext';
 import { redirect} from 'react-router-dom';
+import { User } from '../history/transactions';
+
+
 
 
 const LoginForm = () => {
 
-  //Solicitud a la API de prueba de json server
-  const [data, setData] = useState<any>(null);
 
    //Utilizacion del hook de react-hook-form
    const {register, handleSubmit , formState:{errors}} = useForm<UserTypes>();
-   const {setUser} = useUser();
+   const {user, setUser} = useUser();
 
   const baseURL = 'http://localhost:3000/users/1' ;
-
-  // const onSubmit = handleSubmit(values => { console.log(values)}) ;
    
   const onSubmit = async (data: {name:string, lastName:string, key:string}) => {
         try {
@@ -42,9 +41,9 @@ const LoginForm = () => {
         }catch(erorr){
           console.log("Usuario no encontrado")
         }
+  };
 
-  }
-
+ 
   return (
     <>
       <div className='h-full flex flex-col justify-center items-start py-20  px-40'>
@@ -99,6 +98,13 @@ const LoginForm = () => {
               type="submit">
            Login
     </button>
+
+    {
+      <div>
+      <p>{user?.name}</p>
+      <p>{user?.lastName}</p>
+      </div>
+    }
     
 
   </form>
