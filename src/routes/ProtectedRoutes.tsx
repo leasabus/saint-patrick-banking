@@ -1,10 +1,18 @@
-import { useState } from "react"
-import { Navigate, Outlet } from "react-router-dom";
+import { useUser } from "../context/AuthContext" ;
+import { Navigate , Outlet } from "react-router-dom";
 
-// !Proteccion de rutas sin loguearse
 export const ProtectedRoutes = () => {
-    const[isAuth, setIsAuth] = useState(false);
+
+  const {autenticated} = useUser();
+
+  if(autenticated === false) {
+    return <Navigate to={"/"}/>
+    
+  }
   return (
-     isAuth ? <Outlet/> : <Navigate to={"/login"}></Navigate>
+   <Outlet/>
   )
-}
+} ;
+
+
+

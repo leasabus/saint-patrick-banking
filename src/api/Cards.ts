@@ -19,14 +19,14 @@ export const cards : Card[] = [
   type : 'Credit'
 },
 
-{
-    id : 2,
-    salary : 1400,
-    number: 5312,
-    expirationMonth : 1,
-    expirationYear : 2026,
-    type : 'Debito'
-  },
+// {
+//     id : 2,
+//     salary : 1400,
+//     number: 5312,
+//     expirationMonth : 1,
+//     expirationYear : 2026,
+//     type : 'Debito'
+//   },
 
 
 ]

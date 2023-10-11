@@ -1,26 +1,22 @@
-import { useEffect, useState } from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 import { UserTypes } from '../../interfaces/users';
 import { useUser } from '../../context/AuthContext';
-import { redirect} from 'react-router-dom';
-import { User } from '../history/transactions';
-
-
-
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
-
+   const navigate = useNavigate();
 
    //Utilizacion del hook de react-hook-form
    const {register, handleSubmit , formState:{errors}} = useForm<UserTypes>();
-   const {user, setUser} = useUser();
+   const {user, setUser , autenticated , setIsAutenticated} = useUser();
+   
 
-  const baseURL = 'http://localhost:3000/users/1' ;
+  const baseURL = 'http://localhost:3000/users' ;
    
   const onSubmit = async (data: {name:string, lastName:string, key:string}) => {
         try {
-          const response = await axios.get(`http://localhost:3000/users?name=${data.name}`)
+          const response = await axios.get(`${baseURL}?name=${data.name}`)
           const users = response.data
           // console.log("Este es el user")
           // console.log(users)
@@ -30,8 +26,9 @@ const LoginForm = () => {
             //(mostrar un mensaje por campo)
             if(user.key === data.key && user.name === data.name && user.lastName === data.lastName){
               console.log(user)
-              setUser(user) ;
-              redirect("/welcome")
+              setUser(user)
+              setIsAutenticated(true);
+              navigate('/cards');
             } else {
               alert("Datos incorrectos, intentalo de nuevo")
             }
@@ -98,15 +95,6 @@ const LoginForm = () => {
               type="submit">
            Login
     </button>
-
-    {
-      <div>
-      <p>{user?.name}</p>
-      <p>{user?.lastName}</p>
-      </div>
-    }
-    
-
   </form>
   
 </div>

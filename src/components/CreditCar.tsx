@@ -1,6 +1,5 @@
 import MasterCard from '../../public/assets/cards/mastercard-svgrepo-com.svg';
 import { cards, Card } from '../api/Cards';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 

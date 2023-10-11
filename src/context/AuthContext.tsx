@@ -1,6 +1,5 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 import { UserTypes} from '../interfaces/users';
-import { loginRequest } from "../api/auth";
 
 //tipado de los children
 type UserProviderProps = {
@@ -10,7 +9,9 @@ type UserProviderProps = {
 //tipado del contexto de usuario
 type UserContextType = {
     user: UserTypes | null;
-    setUser: (user: UserTypes | null) => void
+    setUser: (user: UserTypes | null) => void;
+    autenticated: boolean | null
+    setIsAutenticated: (isAutenticated : boolean) => void ;
   };
 
   //Creacion del contexto
@@ -28,9 +29,10 @@ export function useUser() {
 //creacion del provider
 export const AuthProvider = ({children}: UserProviderProps) => {
  const [user, setUser] = useState<UserTypes | null>(null);
+ const [autenticated , setIsAutenticated ] = useState<boolean>(false);
 
  return (
-   <UserContext.Provider value={{user, setUser}}>
+   <UserContext.Provider value={{user, setUser , autenticated , setIsAutenticated}}>
       {children}
    </UserContext.Provider>
  )

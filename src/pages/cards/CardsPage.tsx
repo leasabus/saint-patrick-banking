@@ -2,14 +2,19 @@
 import { Link } from 'react-router-dom';
 import SideBar from '../../components/SideBar' ;
 import { CreditCar } from '../../components/CreditCar';
+import { useUser } from '../../context/AuthContext';
 
 const CardsPage = () => {
+
+  const {user, setUser} = useUser();
+
+
   return (
     <>
     <div className='flex flex-row'>
     <SideBar/>
     <div className='flex flex-col px-20 py-10 items-start justify-start'>
-      <h1 className='text-4xl'>Hola Leandro.</h1>
+      <h1 className='text-4xl'>Hola {user?.name} {user?.lastName}.</h1>
       <h2 className='text-xl mt-4 text-gray-500'>¡Que bueno tenerte de vuelta!</h2>
 
       {/* <div className='flex flex-col w-[500px] mt-8'>
